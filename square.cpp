@@ -400,20 +400,6 @@ void renderGL()
 
     // 交换双缓冲区
     SDL_GL_SwapBuffers();
-
-    // 统计帧率
-    Frames++;
-    {
-        GLint t = SDL_GetTicks();
-        if (t - T0 >= 5000)
-        {
-            GLfloat seconds = (t - T0) / 1000.0;
-            GLfloat fps = Frames / seconds;
-            printf("%d frames in %g seconds = %g FPS\n", Frames, seconds, fps);
-            T0 = t;
-            Frames = 0;
-        }
-    }
 }
 
 /*
